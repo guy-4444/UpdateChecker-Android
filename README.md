@@ -28,7 +28,7 @@ dependencies {
 ```
 ## Usage
 
-###### StepProgress Constructor:
+###### Using UpdateChecker:
 ```java
     UpdateChecker.checkForUpdate(this);
 
@@ -41,9 +41,6 @@ dependencies {
     UpdateChecker.checkForUpdate(MainActivity.this, title, message, updateButton, cancelButton);
 
 ```
-
-![device-2018-06-06-144912](https://github.com/guy-4444/SmartRateUsDialog-Android/blob/master/desc.png?raw=true)
-
 
 ## License
 
