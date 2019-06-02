@@ -1,9 +1,4 @@
 # UpdateChecker-Android
-Checks for an update in the Google Play store and displays a message with a link to the store.
-
-
-
-# UpdateChecker-Android
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://github.com/vlad1m1r990/Lemniscate/blob/master/LICENSE)
 [![](https://jitpack.io/v/guy-4444/UpdateChecker-Android.svg)](https://jitpack.io/#guy-4444/UpdateChecker-Android)
 [![API](https://img.shields.io/badge/API-18%2B-green.svg?style=flat)]()
