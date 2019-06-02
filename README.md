@@ -4,6 +4,7 @@
 [![API](https://img.shields.io/badge/API-18%2B-green.svg?style=flat)]()
 
 A library for simple implementation of available update on the store.
+
 Checks for an update in the Google Play store and displays a message with a link to the store.
 
 <img src="https://github.com/guy-4444/UpdateChecker-Android/blob/master/device-2019-06-02-134024.png" width="320">
@@ -23,15 +24,15 @@ Step 2. Add the dependency:
 
 ```
 dependencies {
-	        implementation 'com.github.guy-4444:UpdateChecker-Android:1.00.01'
+    implementation 'com.github.guy-4444:UpdateChecker-Android:1.00.01'
 }
 ```
 ## Usage
 
-###### Using UpdateChecker:
+###### How to
 ```java
+    // Call with simple line
     UpdateChecker.checkForUpdate(this);
-
 
     // Or create custom strings for dialog - 
     String title = "Update Available";
