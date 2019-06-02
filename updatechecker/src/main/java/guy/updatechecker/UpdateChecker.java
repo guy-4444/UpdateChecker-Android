@@ -28,12 +28,7 @@ public class UpdateChecker {
             , String cancelButton) {
         new UpdateCheckerProcess(context, title, message, updateButton, cancelButton).execute();
     }
-
-    /*
-    context.getPackageName())
-
-    coffeetime.songwriter_en)
-     */
+    
     public static class UpdateCheckerProcess extends AsyncTask<Void, String, String> {
 
         private Context context;
@@ -73,7 +68,7 @@ public class UpdateChecker {
             String newVersion = null;
             try {
                 // GetVersionCode
-                newVersion = Jsoup.connect("https://play.google.com/store/apps/details?id=" + "coffeetime.songwriter_en" + "&hl=it")
+                newVersion = Jsoup.connect("https://play.google.com/store/apps/details?id=" + context.getPackageName() + "&hl=it")
                         .timeout(30000)
                         .userAgent("Mozilla/5.0 (Windows; U; WindowsNT 5.1; en-US; rv1.8.1.6) Gecko/20070725 Firefox/2.0.0.6")
                         .referrer("http://www.google.com")
@@ -152,9 +147,9 @@ public class UpdateChecker {
         adb.setPositiveButton(updateButton, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 try {
-                    context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + "coffeetime.songwriter_en" )));
+                    context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + context.getPackageName() )));
                 } catch (android.content.ActivityNotFoundException anfe) {
-                    context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + "coffeetime.songwriter_en" )));
+                    context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + context.getPackageName() )));
                 } catch (Exception ex) {
 
                 }
