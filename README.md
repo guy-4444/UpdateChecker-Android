@@ -10,6 +10,10 @@ Checks for an update in the Google Play store and displays a message with a link
 
 ![](https://github.com/guy-4444/UpdateChecker-Android/blob/master/device-2019-06-02-134024.png | width=100)
 
+![test](https://github.com/guy-4444/UpdateChecker-Android/blob/master/device-2019-06-02-134024.png)
+<img src="https://github.com/guy-4444/UpdateChecker-Android/blob/master/device-2019-06-02-134024.png" width="48">
+
+
 ## Setup
 Step 1. Add it in your root build.gradle at the end of repositories:
 ```
