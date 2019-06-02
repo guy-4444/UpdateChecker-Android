@@ -1,5 +1,6 @@
 package guy.update_checker_demo;
 
+import android.content.pm.PackageManager;
 import android.os.Bundle;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
@@ -9,7 +10,10 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 
+import guy.updatechecker.UpdateChecker;
+
 public class MainActivity extends AppCompatActivity {
+    String currentVersion;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -18,14 +22,30 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
+        try {
+            currentVersion = getPackageManager().getPackageInfo(MainActivity.this.getPackageName(), 0).versionName;
+        } catch (PackageManager.NameNotFoundException e) {
+            e.printStackTrace();
+        }
+
         FloatingActionButton fab = findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
+                UpdateChecker.checkForUpdate(MainActivity.this);
+                Snackbar.make(view, currentVersion + " Now checking for an update at the store.\nPlease wait...", Snackbar.LENGTH_LONG).show();
             }
         });
+
+
+        UpdateChecker.checkForUpdate(MainActivity.this);
+
+        String title = "Update Available";
+        String message = "There is update available. We strongly recommend you update to the latest version.";
+        String updateButton = "UPDATE";
+        String cancelButton = "No, Thanks";
+        UpdateChecker.checkForUpdate(MainActivity.this, title, message, updateButton, cancelButton);
+
     }
 
     @Override
