@@ -6,12 +6,7 @@
 A library for simple implementation of available update on the store.
 Checks for an update in the Google Play store and displays a message with a link to the store.
 
-![device-2018-06-06-144912](https://github.com/guy-4444/UpdateChecker-Android/blob/master/device-2019-06-02-134024.png =480x640)
-
-![](https://github.com/guy-4444/UpdateChecker-Android/blob/master/device-2019-06-02-134024.png | width=100)
-
-![test](https://github.com/guy-4444/UpdateChecker-Android/blob/master/device-2019-06-02-134024.png)
-<img src="https://github.com/guy-4444/UpdateChecker-Android/blob/master/device-2019-06-02-134024.png" width="48">
+<img src="https://github.com/guy-4444/UpdateChecker-Android/blob/master/device-2019-06-02-134024.png" width="480">
 
 
 ## Setup
