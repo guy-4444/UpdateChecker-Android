@@ -28,7 +28,7 @@ public class UpdateChecker {
             , String cancelButton) {
         new UpdateCheckerProcess(context, title, message, updateButton, cancelButton).execute();
     }
-    
+
     public static class UpdateCheckerProcess extends AsyncTask<Void, String, String> {
 
         private Context context;
