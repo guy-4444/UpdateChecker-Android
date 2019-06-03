@@ -7,6 +7,8 @@ A library for simple implementation of available update on the store.
 
 Checks for an update in the Google Play store and displays a message with a link to the store.
 
+####Only One Line!
+
 <img src="https://github.com/guy-4444/UpdateChecker-Android/blob/master/device-2019-06-02-134024.png" width="320">
 
 
