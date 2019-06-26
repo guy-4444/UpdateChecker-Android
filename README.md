@@ -8,12 +8,11 @@ A library for simple implementation of available update on the store.
 Checks for an update in the Google Play store and displays a message with a link to the store.
 
 #### Only One Line!
-https://raw.githubusercontent.com/guy-4444/SmartRateUsDialog-Android/master/sc_1.png
 <img src="https://raw.githubusercontent.com/guy-4444/SmartRateUsDialog-Android/master/sc_1.png" width="320">
-<img src="https://github.com/guy-4444/SmartRateUsDialog-Android/master/sc_2.png" width="320">
+<img src="https://raw.githubusercontent.com/guy-4444/SmartRateUsDialog-Android/master/sc_2.png" width="320">
 
-<img src="https://github.com/guy-4444/SmartRateUsDialog-Android/master/sc_5.png" width="320">
-<img src="https://github.com/guy-4444/SmartRateUsDialog-Android/master/sc_6.png" width="320">
+<img src="https://raw.githubusercontent.com/guy-4444/SmartRateUsDialog-Android/master/sc_5.png" width="320">
+<img src="https://raw.githubusercontent.com/guy-4444/SmartRateUsDialog-Android/master/sc_6.png" width="320">
 
 
 ## Setup
