@@ -26,7 +26,7 @@ Step 2. Add the dependency:
 
 ```
 dependencies {
-    implementation 'com.github.guy-4444:UpdateChecker-Android:1.00.01'
+    implementation 'com.github.guy-4444:UpdateChecker-Android:1.00.02'
 }
 ```
 ## Usage
