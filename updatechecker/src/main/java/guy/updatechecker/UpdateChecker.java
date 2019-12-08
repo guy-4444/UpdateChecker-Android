@@ -52,7 +52,7 @@ public class UpdateChecker {
 
             try {
                 Log.d("pttt", "Current version " + currentVersion);
-                this.currentVersion = context.getPackageManager().getPackageInfo(context.getPackageName(), 0).versionName;
+                this.currentVersion = context.getPackageManager().getPackageInfo(getMyPackageName(context), 0).versionName;
                 Log.d("pttt", "Current version " + currentVersion);
 
             } catch (PackageManager.NameNotFoundException e) {
@@ -68,7 +68,7 @@ public class UpdateChecker {
             String newVersion = null;
             try {
                 // GetVersionCode
-                newVersion = Jsoup.connect("https://play.google.com/store/apps/details?id=" + context.getPackageName() + "&hl=it")
+                newVersion = Jsoup.connect("https://play.google.com/store/apps/details?id=" + getMyPackageName(context) + "&hl=it")
                         .timeout(30000)
                         .userAgent("Mozilla/5.0 (Windows; U; WindowsNT 5.1; en-US; rv1.8.1.6) Gecko/20070725 Firefox/2.0.0.6")
                         .referrer("http://www.google.com")
@@ -121,8 +121,12 @@ public class UpdateChecker {
         }
 
         if (i < vals1.length && i < vals2.length) {
-            int diff = Integer.valueOf(vals1[i]).compareTo(Integer.valueOf(vals2[i]));
-            return Integer.signum(diff);
+            try {
+                int diff = Integer.valueOf(vals1[i]).compareTo(Integer.valueOf(vals2[i]));
+                return Integer.signum(diff);
+            } catch (NumberFormatException ex) {
+                ex.printStackTrace();
+            }
         }
 
         return Integer.signum(vals1.length - vals2.length);
@@ -147,9 +151,9 @@ public class UpdateChecker {
         adb.setPositiveButton(updateButton, new DialogInterface.OnClickListener() {
             public void onClick(DialogInterface dialog, int which) {
                 try {
-                    context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + context.getPackageName() )));
+                    context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("market://details?id=" + getMyPackageName(context) )));
                 } catch (android.content.ActivityNotFoundException anfe) {
-                    context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + context.getPackageName() )));
+                    context.startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://play.google.com/store/apps/details?id=" + getMyPackageName(context) )));
                 } catch (Exception ex) {
 
                 }
@@ -165,6 +169,10 @@ public class UpdateChecker {
             // activity closed
             ex.printStackTrace();
         }
+    }
+
+    private static String getMyPackageName(Context context) {
+            return context.getPackageName();
     }
 
 }
